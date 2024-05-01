@@ -22,9 +22,6 @@ enum combos {
 	ESC,
 	TAB,
 	TMUX,
-    KEY_Z,
-    KEY_V,
-    KEY_K,
 };
 
 const uint16_t PROGMEM shift_l[] = {KC_P, KC_T, COMBO_END};
@@ -39,9 +36,6 @@ const uint16_t PROGMEM bkspc[] = {MO(_NAV), KC_SPC, COMBO_END};
 const uint16_t PROGMEM esc[] = {KC_J, KC_M, COMBO_END};
 const uint16_t PROGMEM tab[] = {KC_B, KC_G, COMBO_END};
 const uint16_t PROGMEM tmux[] = {KC_ENT, MO(_SYM), COMBO_END};
-const uint16_t PROGMEM key_z[] = {KC_R, KC_X, COMBO_END};
-const uint16_t PROGMEM key_v[] = {KC_T, KC_D, COMBO_END};
-const uint16_t PROGMEM key_k[] = {KC_N, KC_H, COMBO_END};
 
 combo_t key_combos[] = {
 	[SHIFT_L] = COMBO(shift_l, KC_LSFT),
@@ -56,9 +50,6 @@ combo_t key_combos[] = {
 	[ESC] = COMBO(esc, KC_ESC),
 	[TAB] = COMBO(tab, KC_TAB),
 	[TMUX] = COMBO(tmux, C(KC_A)),
-	[KEY_Z] = COMBO(key_z, KC_Z),
-	[KEY_V] = COMBO(key_v, KC_V),
-	[KEY_K] = COMBO(key_k, KC_K),
 };
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
@@ -71,14 +62,14 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
     [_NAV] = LAYOUT(
             KC_1,				KC_2,				KC_3,				KC_4,				KC_5,										KC_6,				KC_7,				KC_8,				KC_9,				KC_0,
-            CW_TOGG,		    KC_NO,			    KC_COMM,		    KC_DOT,			    KC_NO,									    KC_LEFT,		    KC_DOWN,		    KC_UP,			    KC_RIGHT,		    KC_NO,
+            CW_TOGG,		    KC_Z,			    KC_NO,		        KC_V,			    KC_NO,									    KC_LEFT,		    KC_DOWN,		    KC_UP,			    KC_RIGHT,		    KC_NO,
                                 S(KC_1),		    S(KC_3),		    S(KC_5),		                 										            S(KC_7),		    S(KC_8),		    S(KC_SLSH),
                                                                         KC_TRNS,		    KC_NO,									    KC_TAB,			    S(KC_INS)
             ),
 
     [_SYM] = LAYOUT(
-            S(KC_6),		    KC_LBRC,		    S(KC_2),		    KC_RBRC,		    S(KC_8),								    KC_K,		        S(KC_EQL),	        KC_MINS,		    S(KC_MINS),	        KC_NUHS,
-            S(KC_4),		    S(KC_9),		    KC_QUOT,		    S(KC_0),		    S(KC_7),								    S(KC_NUHS),	        S(KC_COMM),	        KC_EQL,			    S(KC_DOT),	        S(KC_QUOT),
+            S(KC_6),		    KC_LBRC,		    S(KC_2),		    KC_RBRC,		    KC_NUHS,								    KC_K,		        S(KC_EQL),	        KC_MINS,		    S(KC_MINS),	        S(KC_SLSH),
+            S(KC_4),		    S(KC_9),		    KC_QUOT,		    S(KC_0),		    KC_NO,								      S(KC_NUHS),	        S(KC_COMM),	        KC_EQL,			    S(KC_DOT),	        S(KC_QUOT),
             		            S(KC_LBRC),	        KC_GRV,			    S(KC_RBRC),	        							                                    KC_NUBS,		    S(KC_NUBS),			KC_SLSH,
                                                                         C(KC_BSPC),	        KC_DEL,									    KC_NO,			    KC_TRNS
             ),
